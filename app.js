@@ -59,10 +59,10 @@ app.use(function(req, res, next) {
 app.use(express.static("./public"));
 app.use(cors());
 
-app.get("/dictionary-api", function(req, res) {
+app.get("/metropass-api", function(req, res) {
 	res.json(passTypes);
 });
-app.post("/dictionary-api", function(req, res) {
+app.post("/metropass-api", function(req, res) {
     skierTerms.push(req.body);
     res.json(passTypes);
 });

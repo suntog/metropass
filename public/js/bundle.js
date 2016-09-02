@@ -4,10 +4,10 @@ var printTerms = require('./lib/printPassTypes');
 
 $(document).ready(function () {
 
-    $.getJSON('/dictionary-api', printTerms);
+    $.getJSON('/metropass-api', printTerms);
     $('form').submit(e => {
         e.preventDefault();
-        $.post('/dictionary-api', {term: $('#term').val(), defined: $('#defined').val()}, printTerms);
+        $.post('/metropass-api', {term: $('#term').val(), defined: $('#defined').val()}, printTerms);
         document.forms[0].reset();
     });
 
@@ -30,7 +30,7 @@ module.exports = function printTerms(passTypes) {
     });
     $('dt').off('dblclick').dblclick(function() {
         $.ajax({
-            url: '/dictionary-api/' + $(this).text(),
+            url: '/metropass-api/' + $(this).text(),
             type: 'DELETE',
             success: printPassTypes
         });
