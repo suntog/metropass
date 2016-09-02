@@ -4,7 +4,11 @@
   "description": "Commuter passes for multiple modes of mass transportation",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predebug": "grunt",
+    "debug": "open http://localhost:3000 & open http://localhost:8080/debug?port5858",
+    "postdebug": "node-inspector & node-dev --debug app & grunt watch",
+    "prestart": "grunt",
+    "start": "open http://localhost:3000 & node app"
   },
   "keywords": [
     "transportation",
@@ -16,8 +20,17 @@
   "author": "William Cheung",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "cors": "^2.8.0",
     "express": "^4.14.0",
     "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }

@@ -7,16 +7,47 @@ var app = express();
 
 var passTypes = [
     {
-        passtype: "prepaid",
-        discount: "50%"
+        passtype: "Monthly Pass - Bus",
+        description: "Pass for unlimited rides on the Blus for the month",
+        discount: {
+          standard: 0,
+          student: 50,
+          senior: 50
+        }
     },
     {
-        passtype: "monthly",
-        discount: "50%"
+        passtype: "Monthly Pass - Subway",
+        description: "Pass for unlimited rides on the Subway for the month",
+        discount: {
+          standard: 0,
+          student: 50,
+          senior: 50
+        }
     },
     {
-        passtype: "employee",
-        discount: "100%"
+        passtype: "Monthly Pass - Commuter Rail",
+        description: "Pass for unlimited rides on the Commuter Rail for the month",
+        discount: {
+          standard: 0,
+          student: 50,
+          senior: 50
+        }
+
+
+    },
+    {
+        passtype: "Prepaid Pass - Bus",
+        description: "Pass to prepay a balance to pay for each ride on the Bus",
+        discount: {
+          standard: 0,
+          student: 50,
+          senior: 50
+        }
+    },
+    {
+        passtype: "Employee Pass",
+        description: "Special Pass for unlimited rides on the Bus, Subway and Commuter Rail",
+        discount: {standard: 100}
     }
 ];
 app.use(bodyParser.json());
@@ -27,12 +58,16 @@ app.use(function(req, res, next) {
 });
 app.use(express.static("./public"));
 app.use(cors());
-app.get("/pass-types", function(req, res) {
-  res.json(passTypes);
+
+app.get("/dictionary-api", function(req, res) {
+	res.json(passTypes);
+});
+app.post("/dictionary-api", function(req, res) {
+    skierTerms.push(req.body);
+    res.json(passTypes);
 });
 
-
 app.listen("3000");
-console.log("Server running on port 3000");
+console.log("Metropass running on port 3000");
 
 module.exports = app;
