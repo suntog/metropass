@@ -17,13 +17,13 @@ $(document).ready(function () {
 var $ = require('jquery');
 
 module.exports = function printTerms(passTypes) {
-    $('body>dl').empty();
+    $('dl#metropass-types').empty();
     $.each(passTypes, function () {
-        $('<dt>').text(this.passtype).appendTo('body>dl');
-        $('<dd>').text(this.description).appendTo('body>dl');
-        $('<dd>').text("Discount Rate:").appendTo('body>dl');
+        $('<dt>').text(this.passtype).appendTo('dl#metropass-types');
+        $('<dd>').text(this.description).appendTo('dl#metropass-types');
+        $('<dd>').text("Discount Rate:").appendTo('dl#metropass-types');
         $.each(this.discount, function (key, value){
-          $('<dd>').text(`${key}: ${value}%`).appendTo('body>dl');
+          $('<dd>').text(`${key}: ${value}%`).appendTo('dl#metropass-types');
         });
 
     });

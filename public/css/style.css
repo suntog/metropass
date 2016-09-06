@@ -11,6 +11,30 @@ h1 {
   margin: 10px 0;
   color: #2559AA;
 }
+#main-menu li {
+  display: inline-block;
+  list-style: none;
+}
+#main-menu li a {
+  text-decoration: none;
+}
+#main-menu-buttons li {
+  list-style: none;
+  margin: 1em 0;
+}
+#main-menu-buttons li a {
+  text-decoration: none;
+  background-color: #72B845;
+  padding: .25em;
+  border: solid 1px;
+  border-radius: 3px;
+  color: white;
+  margin-right: .5em;
+  width: 10%;
+}
+#main-menu-buttons li a:hover {
+  background-color: #82d865;
+}
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,7 +80,8 @@ body dl dd {
   margin: 0 0 10px 55px;
   font-size: 1em;
 }
-body form {
+body form,
+body #main-menu-buttons {
   background-color: #37A0F4;
   color: white;
   padding: 1em;
@@ -66,11 +91,14 @@ body form {
       justify-content: space-around;
 }
 body form input,
-body form button {
+body #main-menu-buttons input,
+body form button,
+body #main-menu-buttons button {
   margin: 0 1em;
   padding: .25em;
 }
-body form button {
+body form button,
+body #main-menu-buttons button {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -80,6 +108,7 @@ body form button {
   border-radius: 3px;
   color: white;
 }
-body form button:hover {
+body form button:hover,
+body #main-menu-buttons button:hover {
   background-color: #82d865;
 }

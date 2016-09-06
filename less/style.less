@@ -21,7 +21,34 @@ h1 {
   margin: 10px 0;
   color: @main-color;
 }
-
+#main-menu {
+  li {
+    display: inline-block;
+    list-style: none;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+#main-menu-buttons {
+  li {
+    list-style: none;
+    margin: 1em 0;
+    a {
+      text-decoration: none;
+      background-color: @button-color;
+      padding: .25em;
+      border: solid 1px;
+      border-radius: 3px;
+      color: white;
+      margin-right: .5em;
+      width: 10%;
+      &:hover {
+        background-color: @button-color-hover;
+      }
+    }
+  }
+}
 body {
   display: flex;
   flex-direction: column;
@@ -67,7 +94,7 @@ body {
 
   }
 
-  form {
+  form, #main-menu-buttons {
     background-color: @secondary-color;
     color: white;
     padding: 1em;
