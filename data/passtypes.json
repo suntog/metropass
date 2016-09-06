@@ -1,0 +1,45 @@
+[
+    {
+        "passtype": "Monthly Pass - Bus",
+        "description": "Pass for unlimited rides on the Blus for the month",
+        "discount": {
+          "standard": 0,
+          "student": 50,
+          "senior": 50
+        }
+    },
+    {
+        "passtype": "Monthly Pass - Subway",
+        "description": "Pass for unlimited rides on the Subway for the month",
+        "discount": {
+          "standard": 0,
+          "student": 50,
+          "senior": 50
+        }
+    },
+    {
+        "passtype": "Monthly Pass - Commuter Rail",
+        "description": "Pass for unlimited rides on the Commuter Rail for the month",
+        "discount": {
+          "standard": 0,
+          "student": 50,
+          "senior": 50
+        }
+
+
+    },
+    {
+        "passtype": "Prepaid Pass - Bus",
+        "description": "Pass to prepay a balance to pay for each ride on the Bus",
+        "discount": {
+          "standard": 0,
+          "student": 50,
+          "senior": 50
+        }
+    },
+    {
+        "passtype": "Employee Pass",
+        "description": "Special Pass for unlimited rides on the Bus, Subway and Commuter Rail",
+        "discount": {"standard": 100}
+    }
+]

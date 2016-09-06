@@ -61,26 +61,14 @@ body form {
   color: white;
   padding: 1em;
   width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
 body form input,
 body form button {
   margin: 0 1em;
-  padding: .5em;
-}
-body form input:first-of-type {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-body form input:last-of-type {
-  -webkit-box-flex: 4;
-      -ms-flex-positive: 4;
-          flex-grow: 4;
+  padding: .25em;
 }
 body form button {
   -webkit-box-flex: 1;
