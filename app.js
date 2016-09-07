@@ -4,7 +4,7 @@ var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var app = express();
-var data = require("./data/passtypes");
+var passdata = require("./data/passdata");
 
 
 app.use(bodyParser.json());
@@ -13,16 +13,18 @@ app.use(function(req, res, next) {
   console.log(`${req.method} request for ${req.url} - ${JSON.stringify(req.body)}`);
   next();
 });
+// TODO: choose js framework (react?) to make this S.P.A.
 app.use(express.static("./public"));
 app.use(cors());
 
 app.get("/metropass-api", function(req, res) {
-	res.json(data);
+  // put db connection here.
+	res.json(passdata);
 });
 app.post("/metropass-api", function(req, res) {
     data.push(req.body);
     console.log(req.body);
-    res.json(data);
+    res.json(passdata);
 });
 
 
