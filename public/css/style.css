@@ -36,49 +36,56 @@ h1 {
   background-color: #82d865;
 }
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin: 0 1em;
 }
-body dl {
+body a {
+  display: inline;
+}
+body #data-target {
   border: double;
   padding: 1em;
   display: block;
   width: 80%;
 }
-body dl + p {
+body #data-target + p {
   display: none;
 }
-body dl:empty {
+body #data-target:empty {
   display: none;
 }
-body dl:empty + p {
+body #data-target:empty + p {
   color: red;
   display: block;
 }
-body dl dt {
+body #data-target div {
   font-family: Arial, sans-serif;
   font-size: 1.5em;
   color: #37A0F4;
+  text-transform: capitalize;
 }
-body dl dt:hover {
+body #data-target div.faretype {
+  margin-left: 1em;
+}
+body #data-target div.farevalue {
+  margin-left: 2em;
+}
+body #data-target div.discount {
+  margin-left: 3em;
+}
+body #data-target div:hover span.editor {
+  display: inline;
+}
+body #data-target div span.editor {
+  font-size: .5em;
+  display: none;
+  border: 1px solid;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+body #data-target div span.editor:hover {
   color: red;
   cursor: pointer;
-}
-body dl dd {
-  font-family: Verdana, sans-serif;
-  margin: 0 0 10px 55px;
-  font-size: 1em;
 }
 body form,
 body #main-menu-buttons {

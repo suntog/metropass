@@ -1,45 +1,141 @@
-[
-    {
-        "passtype": "Monthly Pass - Bus",
-        "description": "Pass for unlimited rides on the Blus for the month",
+{
+  "passtype": {
+    "bus":{
+      "prepaid":{
+        "description":"Pass to prepay a balance to pay for each ride on the Bus",
+        "charge": "2.50",
+        "duration": "unlimited",
         "discount": {
           "standard": 0,
+          "weekend": 50,
           "student": 50,
-          "senior": 50
+          "senior": 50,
+          "employee": 100
         }
-    },
-    {
-        "passtype": "Monthly Pass - Subway",
-        "description": "Pass for unlimited rides on the Subway for the month",
+      },
+      "monthly":{
+        "description":"Pass for unlimited rides on the Bus for the 30 days",
+        "charge": "100.00",
+        "duration": "30",
         "discount": {
           "standard": 0,
+          "weekend": 50,
           "student": 50,
-          "senior": 50
+          "senior": 50,
+          "employee": 100
         }
+      }
     },
-    {
-        "passtype": "Monthly Pass - Commuter Rail",
-        "description": "Pass for unlimited rides on the Commuter Rail for the month",
+    "subway": {
+      "prepaid":{
+        "description":"Pass to prepay a balance to pay for each ride on the Subway",
+        "charge": "2.50",
+        "duration": "unlimited",
         "discount": {
           "standard": 0,
+          "weekend": 50,
           "student": 50,
-          "senior": 50
+          "senior": 50,
+          "employee": 100
         }
-
-
-    },
-    {
-        "passtype": "Prepaid Pass - Bus",
-        "description": "Pass to prepay a balance to pay for each ride on the Bus",
+      },
+      "monthly":{
+        "description":"Pass for unlimited rides on the Subway for the 30 days",
+        "charge": "100.00",
+        "duration": "30",
         "discount": {
           "standard": 0,
+          "weekend": 50,
           "student": 50,
-          "senior": 50
+          "senior": 50,
+          "employee": 100
         }
+      }
     },
-    {
-        "passtype": "Employee Pass",
-        "description": "Special Pass for unlimited rides on the Bus, Subway and Commuter Rail",
-        "discount": {"standard": 100}
+    "rail": {
+      "prepaid":{
+        "description":"Pass to prepay a balance to pay for each ride on the Commuter Rail",
+        "charge": "2.50",
+        "duration": "unlimited",
+        "discount": {
+          "standard": 0,
+          "weekend": 50,
+          "student": 50,
+          "senior": 50,
+          "employee": 100
+        }
+      },
+      "monthly":{
+        "description":"Pass for unlimited rides on the Commuter Rail for the 30 days",
+        "charge": "100.00",
+        "duration": "30",
+        "discount": {
+          "standard": 0,
+          "weekend": 50,
+          "student": 50,
+          "senior": 50,
+          "employee": 100
+        }
+      }
     }
-]
+  },
+
+
+  "accounts": [
+    {
+      "username": "bilbo",
+      "firstname": "Bilbo",
+      "lastname": "Baggins",
+      "email": "bbaggins@shire.com",
+      "passplan": "monthly",
+      "passtype": "rail",
+      "discount": "student",
+      "balance": "100.00",
+      "status": "1"
+    },
+    {
+      "username": "gandalf",
+      "firstname": "Gandalf",
+      "lastname": "The White",
+      "email": "gwhite@isengard.com",
+      "passplan": "prepaid",
+      "passtype": "bus",
+      "discount": "senior",
+      "balance": "89.00",
+      "status": "1"
+    },
+    {
+      "username": "saruman",
+      "firstname": "Saruman",
+      "lastname": "The White",
+      "email": "saruman@isengard.com",
+      "passplan": "prepaid",
+      "passtype": "bus",
+      "discount": "senior",
+      "balance": "0",
+      "status": "0"
+    },
+    {
+      "username": "gollum",
+      "firstname": "Smeagol",
+      "lastname": "Deagolbane",
+      "email": "gollum@gladdenfields.com",
+      "passplan": "monthly",
+      "passtype": "subway",
+      "discount": "senior",
+      "balance": "100.00",
+      "status": "1"
+    },
+    {
+      "username": "sauron",
+      "firstname": "Mairon",
+      "lastname": "Gorthaur",
+      "email": "mgorthaur@mordor.com",
+      "passplan": "monthly",
+      "passtype": "subway",
+      "discount": "employee",
+      "balance": "100000000000000.00",
+      "status": "1"
+    }
+  ]
+}

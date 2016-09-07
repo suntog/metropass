@@ -25,12 +25,6 @@ app.post("/metropass-api", function(req, res) {
     res.json(data);
 });
 
-app.get("/hello-world", function(req, res) {
-  res.sendfile(__dirname + "/public/hello-world.html");
-});
-/*app.post("/hello-world", function(req, res) {
-  res.send("hello world");
-});*/
 
 app.listen("3000");
 console.log("Metropass running on port 3000");

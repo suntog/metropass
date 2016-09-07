@@ -1,12 +1,12 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'debug' ]
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'dev' ]
 2 info using npm@2.15.9
 3 info using node@v4.5.0
-4 verbose run-script [ 'predebug', 'debug', 'postdebug' ]
-5 info predebug metropass@1.0.0
+4 verbose run-script [ 'predev', 'dev', 'postdev' ]
+5 info predev metropass@1.0.0
 6 verbose unsafe-perm in lifecycle true
-7 info metropass@1.0.0 Failed to exec predebug script
-8 verbose stack Error: metropass@1.0.0 predebug: `grunt`
+7 info metropass@1.0.0 Failed to exec predev script
+8 verbose stack Error: metropass@1.0.0 predev: `grunt`
 8 verbose stack Exit status 3
 8 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:217:16)
 8 verbose stack     at emitTwo (events.js:87:13)
@@ -19,13 +19,13 @@
 9 verbose pkgid metropass@1.0.0
 10 verbose cwd /Users/williamcheung/Sites/metropass
 11 error Darwin 15.6.0
-12 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "debug"
+12 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "dev"
 13 error node v4.5.0
 14 error npm  v2.15.9
 15 error code ELIFECYCLE
-16 error metropass@1.0.0 predebug: `grunt`
+16 error metropass@1.0.0 predev: `grunt`
 16 error Exit status 3
-17 error Failed at the metropass@1.0.0 predebug script 'grunt'.
+17 error Failed at the metropass@1.0.0 predev script 'grunt'.
 17 error This is most likely a problem with the metropass package,
 17 error not with npm itself.
 17 error Tell the author that this fails on your system:

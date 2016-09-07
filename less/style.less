@@ -50,12 +50,9 @@ h1 {
   }
 }
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-  dl {
+  margin: 0 1em;
+  a {display: inline;}
+  #data-target {
     border: double;
     padding: 1em;
     display: block;
@@ -75,22 +72,39 @@ body {
 
     }
 
-    dt {
+    div {
       font-family: @main-font;
       font-size: 1.5em;
       color: @secondary-color;
-
+      text-transform: capitalize;
+      &.faretype {
+        margin-left: 1em;
+      }
+      &.farevalue {
+        margin-left: 2em;
+      }
+      &.discount {
+        margin-left: 3em;
+      }
       &:hover {
-        color: @alert-color;
-        cursor: pointer;
+        span.editor {
+          display:inline;
+        }
+      }
+      span.editor {
+        font-size: .5em;
+        display: none;
+        border: 1px solid;
+        border-radius: 3px;
+        vertical-align: middle;
+        margin-left: 5px;
+        &:hover {
+          color: @alert-color;
+          cursor: pointer;
+        }
       }
     }
 
-    dd {
-      font-family: @secondary-font;
-      margin: 0 0 10px 55px;
-      font-size: 1em;
-    }
 
   }
 
