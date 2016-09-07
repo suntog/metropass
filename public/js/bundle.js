@@ -1,11 +1,23 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var $ = require('jquery');
 var printPassTypes = require('./lib/printPassTypes');
+var printAccnTypes = require('./lib/printAccnTypes');
 
 $(document).ready(function () {
-
+  var pathName = window.location.pathname;
+  //console.log(`path: ${pathName}`);
+  if (pathName == "/metropass-types.html") {
     $.getJSON('/metropass-api', printPassTypes);
-    var piggly = 'wiggly';
+  }
+  if (pathName == "/metropass-account.html") {
+    $.getJSON('/metropass-api', printAccnTypes);
+    $('#check-all').click(function(e) {
+      $.getJSON('/metropass-api', printAccnTypes);
+    });
+
+  }
+
+
   /*  $('form').submit(e => {
         e.preventDefault();
         $.post('/metropass-api', {passtype: $('#passtype').val(), description: $('#description').val()}, printTerms);
@@ -14,10 +26,42 @@ $(document).ready(function () {
 */
 });
 
-},{"./lib/printPassTypes":2,"jquery":3}],2:[function(require,module,exports){
+},{"./lib/printAccnTypes":2,"./lib/printPassTypes":3,"jquery":4}],2:[function(require,module,exports){
 var $ = require('jquery');
 
-module.exports = function printTerms(passTypes) {
+module.exports = function printAccnts(passTypes) {
+  $('#data-target').empty();
+
+  obj = passTypes.accounts;
+
+  function recurseObj(obj) {
+    $.each(obj, function (key, value) {
+
+      if (typeof value === 'object') {
+        var text = key;
+        if (Array.isArray(obj)) {
+          text = `account-${key}`;
+        }
+        $('<div class="' + `${key}` + '">').text(`${text}:`).appendTo('#data-target');
+        recurseObj(value);
+      } else {
+        $('<div class="' + `account-${key}` + '">').text(`${key}: ${value}`).appendTo('#data-target');
+      }
+
+    });
+  }
+  recurseObj(obj);
+
+
+
+
+
+};
+
+},{"jquery":4}],3:[function(require,module,exports){
+var $ = require('jquery');
+
+module.exports = function printPass(passTypes) {
   $('#data-target').empty();
   // TODO: make this more generalized and recursive.
   $.each(passTypes.passtype, function (type, typeValue) {
@@ -36,17 +80,10 @@ module.exports = function printTerms(passTypes) {
       });
     });
   });
-  /*
-  $('dt').off('dblclick').dblclick(function() {
-    $.ajax({
-      url: '/metropass-api/' + $(this).text(),
-      type: 'DELETE',
-      success: printPassTypes
-    });
-  });*/
+
 };
 
-},{"jquery":3}],3:[function(require,module,exports){
+},{"jquery":4}],4:[function(require,module,exports){
 /*eslint-disable no-unused-vars*/
 /*!
  * jQuery JavaScript Library v3.1.0

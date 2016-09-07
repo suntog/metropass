@@ -18,7 +18,8 @@ app.use(express.static("./public"));
 app.use(cors());
 
 app.get("/metropass-api", function(req, res) {
-  // put db connection here.
+  // TODO: put db connection here.
+  var piggly = 'wiggly';
 	res.json(passdata);
 });
 app.post("/metropass-api", function(req, res) {
