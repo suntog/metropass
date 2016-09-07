@@ -22,8 +22,27 @@
   <dl id="metropass-purchase"></dl>
 
   <form>
-    <input type="text" id="username" name="username" placeholder="new username..." required />
-    <input type="Text" name="idemail" id="idemail" placeholder="new email..." required />
+    <input type="text" id="username" name="username" placeholder="username..." required />
+    <input type="text" id="firstname" name="firstname" placeholder="First Name..." required />
+    <input type="text" id="lastname" name="lastname" placeholder="Last Name..." required />
+    <input type="text" id="idemail" name="idemail"  placeholder="email..." required />
+    <select id="passtype" name="passtype" required>
+      <option value="bus">Bus</option>
+      <option value="subway">Subway</option>
+      <option value="rail">Commuter Rail</option>
+    </select>
+    <select id="passplan" name="passplan" required>
+      <option value="prepaid">Prepaid Card</option>
+      <option value="montly">Monthly Pass</option>
+    </select>
+    <select id="discount" name="discount">
+      <option value="standard">Standard</option>
+      <option value="student">Student</option>
+      <option value="senior">Senior</option>
+      <option value="employee">Employee</option>
+    </select>
+    <input <input type="text" id="balance" name="balance" placeholder="$amount..." required />
+
     <button>Buy a Metropass Card</button>
   </form>
 
