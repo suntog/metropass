@@ -10,9 +10,10 @@ $(document).ready(function () {
     $.getJSON('/metropass-api', printPassTypes);
   }
   if (pathName == "/metropass-account.html") {
-    $.getJSON('/metropass-api', printAccnTypes);
+  //$.getJSON('/metropass-api', printAccnTypes);
     $('#check-all').click(function(e) {
       $.getJSON('/metropass-api', printAccnTypes);
+      e.preventDefault();
     });
 
   }
@@ -36,16 +37,16 @@ module.exports = function printAccnts(passTypes) {
 
   function recurseObj(obj) {
     $.each(obj, function (key, value) {
-
+      var text = key;
+      if (Array.isArray(obj)) {
+        text = `account-${key}`;
+      }
       if (typeof value === 'object') {
-        var text = key;
-        if (Array.isArray(obj)) {
-          text = `account-${key}`;
-        }
-        $('<div class="' + `${key}` + '">').text(`${text}:`).appendTo('#data-target');
+
+        $('<div class="' + text + '">').text(`${text}:`).appendTo('#data-target');
         recurseObj(value);
       } else {
-        $('<div class="' + `account-${key}` + '">').text(`${key}: ${value}`).appendTo('#data-target');
+        $('<div class="' + text + '">').text(`${key}: ${value}`).appendTo('#data-target');
       }
 
     });

@@ -9,9 +9,10 @@ $(document).ready(function () {
     $.getJSON('/metropass-api', printPassTypes);
   }
   if (pathName == "/metropass-account.html") {
-    $.getJSON('/metropass-api', printAccnTypes);
+  //$.getJSON('/metropass-api', printAccnTypes);
     $('#check-all').click(function(e) {
       $.getJSON('/metropass-api', printAccnTypes);
+      e.preventDefault();
     });
 
   }
